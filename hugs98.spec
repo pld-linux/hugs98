@@ -6,8 +6,6 @@ Release:	2
 Epoch:		2
 License:	BSDish
 Group:		Development/Languages
-Group(de):	Entwicklung/Sprachen
-Group(pl):	Programowanie/Jêzyki
 Source0:	http://www.cse.ogi.edu/PacSoft/projects/Hugs/downloads/%{name}-%{version}.tar.gz
 URL:		http://www.haskell.org/hugs/
 Provides:	hugs
