@@ -32,6 +32,7 @@ programowania.
 cd src/unix
 cp -f /usr/share/automake/config.* .
 %configure \
+	--target= \
 	--with-readline \
 	--with-pthreads \
 	--with-preprocessor \
