@@ -27,7 +27,7 @@ programowania.
 
 %build
 cd src/unix
-aclocal
+%{__aclocal}
 %configure2_13 \
 	--with-readline \
 	--enable-internal-prims
