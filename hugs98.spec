@@ -2,7 +2,7 @@ Summary:	Hugs - a Haskell interpreter
 Summary(pl):	Hugs - interpretator Haskella
 Name:		hugs98
 Version:	Feb2001
-Release:	1
+Release:	2
 Epoch:		2
 License:	BSDish
 Group:		Development/Languages
@@ -28,7 +28,8 @@ programowania.
 
 %build
 cd src/unix
-%configure \
+aclocal
+%configure2_13 \
 	--with-readline \
 	--enable-internal-prims
 cd ..
