@@ -25,7 +25,7 @@ cd src/unix
 	--with-readline \
 	--enable-internal-prims
 cd ..
-%{__make} OPTFLAGS="$RPM_OPT_FLAGS"
+%{__make} OPTFLAGS="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O -g}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
