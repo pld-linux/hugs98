@@ -1,23 +1,30 @@
 Summary:	Hugs - a Haskell interpreter
+Summary(pl):	Hugs - interpretator Haskella
 Name:		hugs98
-Version:	Nov1999
-Release:	2
-Epoch:		1
-License:	GPL
+Version:	Feb2001
+Release:	1
+Epoch:		2
+License:	BSDish
 Group:		Development/Languages
 Group(de):	Entwicklung/Sprachen
 Group(pl):	Programowanie/Jêzyki
-Source0:	ftp://ftp.cs.nott.ac.uk/pub/haskell/hugs/Hugs98-%{version}.tar.gz
+Source0:	http://www.cse.ogi.edu/PacSoft/projects/Hugs/downloads/%{name}-%{version}.tar.gz
+URL:		http://www.haskell.org/hugs/
 Provides:	hugs
-BuildRequires:	ncurses-devel
-BuildRequires:	readline-devel
+BuildRequires:	ncurses-devel >= 5.2
+BuildRequires:	readline-devel >= 4.1
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Hugs is a (nearly) Haskell 1.4 interpreter.
+Hugs 98 is an interpreter for Haskell, a lazy functional programming
+language.
+
+%description -l pl
+Hugs 98 jest interpretatorem Haskella - funkcjonalnego jêzyka
+programowania.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 
 %build
 cd src/unix
@@ -29,26 +36,28 @@ cd ..
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_mandir}/man1
+install -d $RPM_BUILD_ROOT%{_examplesdir}
 
 %{__make} -C src install \
 	prefix=$RPM_BUILD_ROOT%{_prefix} \
 	execprefix=$RPM_BUILD_ROOT%{_execprefix} \
 	bindir=$RPM_BUILD_ROOT%{_bindir} \
-	datadir=$RPM_BUILD_ROOT%{_datadir}
+	datadir=$RPM_BUILD_ROOT%{_datadir} \
+	mandir=$RPM_BUILD_ROOT%{_mandir}
 
-# install docs by hand
-install docs/hugs.1 $RPM_BUILD_ROOT%{_mandir}/man1
+mv $RPM_BUILD_ROOT%{_datadir}/hugs/demos \
+   $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-gzip -9nf docs/{server.tex,windows-notes.txt} License Readme
+gzip -9nf docs/{ffi*,obser*,zip*} License Readme
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc docs/server.html docs/{server.tex,windows-notes.txt}.gz License* Readme*
+%doc docs/*.html docs/*.gz *.gz
 %attr(755,root,root) %{_bindir}/hugs
 %attr(755,root,root) %{_bindir}/runhugs
 %{_datadir}/hugs/*
-%{_mandir}/man1/*
+%{_mandir}/man?/*
+%{_examplesdir}/%{name}-%{version}
