@@ -2,7 +2,7 @@ Summary:	Hugs - a Haskell interpreter
 Summary(pl):	Hugs - interpreter Haskella
 Name:		hugs98
 Version:	Feb2001
-Release:	2
+Release:	3
 Epoch:		2
 License:	BSD-like
 Group:		Development/Languages
@@ -48,14 +48,12 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}
 mv -f $RPM_BUILD_ROOT%{_datadir}/hugs/demos \
 	$RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-gzip -9nf docs/{ffi*,obser*,zip*} License Readme
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc docs/*.html docs/*.gz *.gz
+%doc docs/*.html docs/{ffi*,obser*,zip*} License Readme
 %attr(755,root,root) %{_bindir}/hugs
 %attr(755,root,root) %{_bindir}/runhugs
 %{_datadir}/hugs/*
