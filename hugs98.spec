@@ -7,6 +7,7 @@ Epoch:		2
 License:	BSD-like
 Group:		Development/Languages
 Source0:	http://cvs.haskell.org/Hugs/downloads/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	8d3951d991661045713b612bf539c8c9
 URL:		http://www.haskell.org/hugs/
 Provides:	hugs
 BuildRequires:	ncurses-devel >= 5.2
