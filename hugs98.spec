@@ -4,7 +4,7 @@ Name:		hugs98
 Version:	Feb2001
 Release:	2
 Epoch:		2
-License:	BSDish
+License:	BSD-like
 Group:		Development/Languages
 Source0:	http://www.cse.ogi.edu/PacSoft/projects/Hugs/downloads/%{name}-%{version}.tar.gz
 URL:		http://www.haskell.org/hugs/
