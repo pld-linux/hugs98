@@ -1,5 +1,5 @@
 Summary:	Hugs - a Haskell interpreter
-Summary(pl):	Hugs - interpretator Haskella
+Summary(pl):	Hugs - interpreter Haskella
 Name:		hugs98
 Version:	Feb2001
 Release:	2
@@ -13,6 +13,7 @@ URL:		http://www.haskell.org/hugs/
 Provides:	hugs
 BuildRequires:	ncurses-devel >= 5.2
 BuildRequires:	readline-devel >= 4.1
+BuildRequires:	automake
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -20,7 +21,7 @@ Hugs 98 is an interpreter for Haskell, a lazy functional programming
 language.
 
 %description -l pl
-Hugs 98 jest interpretatorem Haskella - funkcjonalnego jêzyka
+Hugs 98 jest interpreterem Haskella - funkcjonalnego jêzyka
 programowania.
 
 %prep
@@ -46,8 +47,8 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}
 	datadir=$RPM_BUILD_ROOT%{_datadir} \
 	mandir=$RPM_BUILD_ROOT%{_mandir}
 
-mv $RPM_BUILD_ROOT%{_datadir}/hugs/demos \
-   $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+mv -f $RPM_BUILD_ROOT%{_datadir}/hugs/demos \
+	$RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 gzip -9nf docs/{ffi*,obser*,zip*} License Readme
 
