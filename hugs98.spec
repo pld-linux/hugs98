@@ -32,7 +32,6 @@ programowania.
 cd src/unix
 cp -f /usr/share/automake/config.* .
 %configure \
-	--target=`./config.guess` \
 	--with-readline \
 	--with-pthreads \
 	--with-preprocessor \
