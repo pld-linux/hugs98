@@ -1,13 +1,14 @@
 Summary:	Hugs - a Haskell interpreter
 Summary(pl):	Hugs - interpreter Haskella
 Name:		hugs98
-Version:	Nov2002
+Version:	Nov2003
 Release:	1
 Epoch:		2
 License:	BSD-like
 Group:		Development/Languages
 Source0:	http://cvs.haskell.org/Hugs/downloads/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	8d3951d991661045713b612bf539c8c9
+# Source0-md5:	86ed68ada4ff1d455213a851256437fc
+Patch0:		%{name}-docbook.patch
 URL:		http://www.haskell.org/hugs/
 Provides:	hugs
 BuildRequires:	ncurses-devel >= 5.2
@@ -24,6 +25,7 @@ programowania.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 cd src/unix
@@ -52,9 +54,6 @@ cp HsFFI.h ../include
 	mandir=$RPM_BUILD_ROOT%{_mandir}
 cd ..
 
-for f in `find -name '*.so'`; do
-	cp $f $RPM_BUILD_ROOT%{_libdir}/hugs/$f
-done
 rm -rf $RPM_BUILD_ROOT%{_libdir}/hugs/{docs,Credits,License,Readme}
 mv $RPM_BUILD_ROOT%{_libdir}/hugs/demos $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
@@ -63,7 +62,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc docs/*.html docs/{ffi,mdo,observe,zipcomp}-notes.txt docs/options.txt License Readme Credits
+%doc docs/*.html docs/{ffi,libraries}-notes.txt License Readme Credits
 %attr(755,root,root) %{_bindir}/hugs
 %attr(755,root,root) %{_bindir}/ffihugs
 %attr(755,root,root) %{_bindir}/runhugs
