@@ -10,9 +10,10 @@ Source0:	http://cvs.haskell.org/Hugs/downloads/%{version}/%{name}-%{version}.tar
 # Source0-md5:	86ed68ada4ff1d455213a851256437fc
 Patch0:		%{name}-docbook.patch
 URL:		http://www.haskell.org/hugs/
-Provides:	hugs
+BuildRequires:	automake
 BuildRequires:	ncurses-devel >= 5.2
 BuildRequires:	readline-devel >= 4.1
+Provides:	hugs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -29,14 +30,17 @@ programowania.
 
 %build
 cd src/unix
-%configure --target=`config.guess` \
+cp -f /usr/share/automake/config.* .
+%configure \
+	--target=`./config.guess` \
 	--with-readline \
 	--with-pthreads \
 	--with-preprocessor \
 	--enable-internal-prims \
 	--enable-ffi
 cd ..
-%{__make} OPTFLAGS="%{rpmcflags}"
+%{__make} \
+	OPTFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
