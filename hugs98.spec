@@ -2,7 +2,7 @@ Summary:	Hugs - a Haskell interpreter
 Summary(pl):	Hugs - interpreter Haskella
 Name:		hugs98
 Version:	Nov2003
-Release:	2
+Release:	3
 Epoch:		2
 License:	BSD-like
 Group:		Development/Languages
