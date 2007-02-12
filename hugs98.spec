@@ -1,5 +1,5 @@
 Summary:	Hugs - a Haskell interpreter
-Summary(pl):	Hugs - interpreter Haskella
+Summary(pl.UTF-8):   Hugs - interpreter Haskella
 Name:		hugs98
 Version:	Nov2003
 Release:	3
@@ -20,8 +20,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Hugs 98 is an interpreter for Haskell, a lazy functional programming
 language.
 
-%description -l pl
-Hugs 98 jest interpreterem Haskella - leniwego, funkcyjnego jêzyka
+%description -l pl.UTF-8
+Hugs 98 jest interpreterem Haskella - leniwego, funkcyjnego jÄ™zyka
 programowania.
 
 %prep
