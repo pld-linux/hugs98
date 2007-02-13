@@ -1,5 +1,5 @@
 Summary:	Hugs - a Haskell interpreter
-Summary(pl.UTF-8):   Hugs - interpreter Haskella
+Summary(pl.UTF-8):	Hugs - interpreter Haskella
 Name:		hugs98
 Version:	Nov2003
 Release:	3
