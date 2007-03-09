@@ -28,31 +28,34 @@ Provides:	hugs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Hugs 98 is a functional programming system based on Haskell 98, the de facto
-standard for non-strict functional programming languages. Hugs 98 provides an
-almost complete implementation of Haskell 98, including:
+Hugs 98 is a functional programming system based on Haskell 98, the de
+facto standard for non-strict functional programming languages. Hugs
+98 provides an almost complete implementation of Haskell 98,
+including:
 
 * Lazy evaluation, higher order functions, and pattern matching.
 
-* A wide range of built-in types, from characters to bignums, and lists to
-  functions, with comprehensive facilities for defining new datatypes and type
-  synonyms.
+* A wide range of built-in types, from characters to bignums, and
+  lists to functions, with comprehensive facilities for defining new
+  datatypes and type synonyms.
 
 * An advanced polymorphic type system with type and constructor class
   overloading.
 
-* All of the features of the Haskell 98 expression and pattern syntax including
-  lambda, case, conditional and let expressions, list comprehensions,
-  do-notation, operator sections, and wildcard, irrefutable and ‘as’ patterns.
+* All of the features of the Haskell 98 expression and pattern syntax
+  including lambda, case, conditional and let expressions, list
+  comprehensions, do-notation, operator sections, and wildcard,
+  irrefutable and ‘as’ patterns.
 
-* An implementation of the Haskell 98 primitives for monadic I/O, with support
-  for simple interactive programs, access to text files, handle-based I/O, and
-  exception handling.
+* An implementation of the Haskell 98 primitives for monadic I/O, with
+  support for simple interactive programs, access to text files,
+  handle-based I/O, and exception handling.
 
-* An almost complete implementation of the Haskell module system. Hugs 98 also
-  supports a number of advanced and experimental extensions including
-  multi-parameter classes, extensible records, rank-2 polymorphism,
-  existentials, scoped type variables, and restricted type synonyms.
+* An almost complete implementation of the Haskell module system. Hugs
+  98 also supports a number of advanced and experimental extensions
+  including multi-parameter classes, extensible records, rank-2
+  polymorphism, existentials, scoped type variables, and restricted
+  type synonyms.
 
 %description -l pl.UTF-8
 Hugs 98 to interpreter języka Hakell 98, standardu de facto leniwych,
@@ -80,7 +83,7 @@ implementacji Haskella 98, w szczególności:
 
 * Niemal pełnej implementacji systemu modułów Haskella. Hugs 98
   wspiera także wiele zaawansowanych i eksperymentalnych rozszerzeń
-  jezyka: wieloparametrowe klasy, rozszerzalne rekordy, polimorfizm
+  języka: wieloparametrowe klasy, rozszerzalne rekordy, polimorfizm
   rzędu 2, kwantyfikatory egzystencjalne, lokalne zmienne typowe
   i synonimy typów o zakresie stosowania ograniczonym do danego kodu.
 
