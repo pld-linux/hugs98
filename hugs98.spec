@@ -4,7 +4,7 @@ Summary:	Hugs - a Haskell interpreter
 Summary(pl.UTF-8):	Hugs - interpreter Haskella
 Name:		hugs98
 Version:	%(echo %{version_dir} | tr -d -)
-Release:	4
+Release:	5
 Epoch:		2
 License:	BSD-like
 Group:		Development/Languages
@@ -18,7 +18,7 @@ BuildRequires:	OpenGL-devel
 BuildRequires:	OpenGL-glut-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	docbook-dtd42-xml
+BuildRequires:	docbook-dtd42-sgml
 BuildRequires:	docbook-utils
 BuildRequires:	freealut-devel
 BuildRequires:	ncurses-devel >= 5.2
