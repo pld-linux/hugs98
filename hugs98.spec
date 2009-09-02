@@ -18,6 +18,7 @@ BuildRequires:	OpenGL-devel
 BuildRequires:	OpenGL-glut-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	docbook-dtd42-xml
 BuildRequires:	docbook-utils
 BuildRequires:	freealut-devel
 BuildRequires:	ncurses-devel >= 5.2
